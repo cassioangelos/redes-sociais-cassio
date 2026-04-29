@@ -13,59 +13,48 @@ body {
   color: #fff;
 }
 
-/* Layout geral */
+/* Layout padrão (mobile) */
 .wrapper {
   display: flex;
-  min-height: 100vh;
-}
-
-/* Lado esquerdo (boneco) */
-.left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
+/* Boneco */
 .left img {
-  max-width: 50%;
+  width: 180px;
+  margin-bottom: 20px;
   animation: flutuar 3s ease-in-out infinite;
 }
 
-/* Animação leve */
+/* Animação */
 @keyframes flutuar {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* Lado direito */
-.right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Conteúdo */
 .container {
+  width: 100%;
   max-width: 400px;
-  width: 90%;
   text-align: center;
 }
 
-/* Nome maior */
+/* Nome */
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
-/* Subtítulo */
+/* Sub */
 p {
   color: #aaa;
   margin-bottom: 25px;
 }
 
-/* Botões */
+/* Links */
 .link {
   display: block;
   text-decoration: none;
@@ -80,23 +69,33 @@ p {
 
 .link:hover {
   background: #1f2a44;
-  transform: scale(1.04);
 }
 
-/* WhatsApp destaque */
+/* WhatsApp */
 .whatsapp {
   background: #1f6f3d;
-  border: none;
+}
+.Email {
+  background: blue;
 }
 
-.whatsapp:hover {
-  background: #2ecc71;
-}
+/* Desktop */
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    justify-content: center;
+  }
 
-.footer {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #666;
+  .left, .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left img {
+    width: 250px;
+  }
 }
 </style>
 
@@ -106,34 +105,20 @@ p {
 
 <div class="wrapper">
 
-  <!-- Boneco -->
   <div class="left">
-    <img src="meu boneco.png" alt="Cássio Avatar">
+    <img src="meu boneco.png" alt="Avatar">
   </div>
 
-  <!-- Conteúdo -->
-  <div class="right">
-    <div class="container">
-
-      <h1>Cássio Ângelo</h1>
-      <p>Tecnologia • IA • Segurança Digital • Desenvolvimento WEB</p>
-
-      <a class="link" href="https://instagram.com/cassioangelos" target="_blank">Instagram</a>
-      <a class="link" href="https://linkedin.com/in/cassioangelos" target="_blank">LinkedIn</a>
-      <a class="link" href="https://github.com/cassioangelos" target="_blank">GitHub</a>
-      <a class="link" href="https://youtube.com/@cassioangelos" target="_blank">YouTube</a>
-      <a class="link" href="https://x.com/cassioangelos" target="_blank">X (Twitter)</a>
-
-      <!-- WhatsApp -->
-      <a class="link whatsapp" href="https://wa.me/5579998705157" target="_blank">
-        Falar no WhatsApp
-      </a>
-
-      <div class="footer">
-        © 2026 - Cássio Ângelo
-      </div>
-
-    </div>
+  <div class="container">
+    <h1>Cássio Ângelo</h1>
+    <p>Tecnologia • IA • Dev • Segurança Digital</p>
+    <a class="link" href="https://www.instagram.com/cassioangelos/">Instagram</a>
+    <a class="link" href="https://www.linkedin.com/in/cassioangelos/">LinkedIn</a>
+    <a class="link" href="https://github.com/cassioangelos">GitHub</a>
+    <a class="link" href="https://www.youtube.com/@cassioangelos">YouTube</a>
+    <a class="link" href="https://x.com/cassioangelos">X</a>
+    <a class="link Email" href="mailto:cassioangelo@hotmail.com">Enviar E-mail</a>
+    <a class="link whatsapp" href="https://wa.me/5579998705157">WhatsApp</a>
   </div>
 
 </div>
